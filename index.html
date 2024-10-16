@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Business Planning Platform Architecture</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            body {
+                font-family: "Work Sans", sans-serif;
+            }
+
+            .slide {
+                height: 100vh;
+                scroll-snap-align: start;
+            }
+
+            .scroll-container {
+                scroll-snap-type: y mandatory;
+                overflow-y: scroll;
+                height: 100vh;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-100">
+        <!-- <div class="sticky top-0 p-6 bg-slate-700 text-gray-100">
+        <button onclick="convertToPDF()">Download PDF</button>
+    </div> -->
+
+        <div class="scroll-container">
+            <!-- Slide 1: Title -->
+            <section
+                class="slide flex items-center justify-center bg-gradient-to-r from-black to-slate-900"
+            >
+                <div class="text-center text-white">
+                    <h1 class="text-6xl font-bold mb-4">Hixai</h1>
+                    <p class="text-2xl">Tailored Offering Architecture</p>
+                </div>
+            </section>
+
+            <!-- Slide 2: Overview -->
+            <section class="slide flex items-center justify-center bg-white">
+                <div class="max-w-4xl mx-auto px-8">
+                    <h2 class="text-4xl font-bold mb-8 text-gray-800">
+                        System Overview
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <h3
+                                class="text-xl font-semibold mb-4 text-gray-600"
+                            >
+                                Intelligent Planning
+                            </h3>
+                            <p class="text-gray-600">
+                                Leverage AI and domain knowledge for
+                                comprehensive business planning
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <h3
+                                class="text-xl font-semibold mb-4 text-gray-600"
+                            >
+                                Customizable Knowledge
+                            </h3>
+                            <p class="text-gray-600">
+                                Tailor advice with organization-specific
+                                insights and playbooks
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Architecture Diagram -->
+            <section class="slide flex items-center justify-center bg-gray-50">
+                <div class="max-w-6xl mx-auto px-8">
+                    <h2
+                        class="text-4xl font-bold mb-8 text-center text-gray-800"
+                    >
+                        System Architecture
+                    </h2>
+                    <img
+                        src="image.png"
+                        alt="System Architecture Diagram"
+                        class="w-full h-auto rounded-lg"
+                    />
+                </div>
+            </section>
+
+            <!-- Slide 4: RAG vs Fine-tuning -->
+            <section class="slide flex items-center justify-center bg-white">
+                <div class="max-w-4xl mx-auto px-8">
+                    <h2
+                        class="text-4xl font-bold mb-8 text-center text-gray-800"
+                    >
+                        RAG vs Fine-tuning
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <h3
+                                class="text-2xl font-semibold mb-4 text-gray-600"
+                            >
+                                Retrieval-Augmented Generation (RAG)
+                            </h3>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                                <li>
+                                    Flexible integration of up-to-date knowledge
+                                </li>
+                                <li>Easier to update and maintain</li>
+                                <li>
+                                    Clear separation of general and specific
+                                    knowledge
+                                </li>
+                                <li>
+                                    Cost-effective for multiple organizations
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3
+                                class="text-2xl font-semibold mb-4 text-gray-600"
+                            >
+                                Fine-tuning
+                            </h3>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                                <li>
+                                    Requires retraining for knowledge updates
+                                </li>
+                                <li>Higher computational cost</li>
+                                <li>Risk of catastrophic forgetting</li>
+                                <li>Less flexible for multi-tenant systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Key Components -->
+            <section class="slide flex items-center justify-center bg-gray-50">
+                <div class="max-w-5xl mx-auto px-8">
+                    <h2
+                        class="text-4xl font-bold mb-8 text-center text-gray-800"
+                    >
+                        Key Components
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3
+                                class="text-xl font-semibold mb-4 text-gray-600"
+                            >
+                                Next.js Frontend
+                            </h3>
+                            <p class="text-gray-600">
+                                Responsive and intuitive user interface for
+                                business plan creation and collaboration
+                            </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3
+                                class="text-xl font-semibold mb-4 text-gray-600"
+                            >
+                                RAG Service
+                            </h3>
+                            <p class="text-gray-600">
+                                Core system combining LLMs with curated
+                                knowledge bases for tailored business plans
+                            </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3
+                                class="text-xl font-semibold mb-4 text-gray-600"
+                            >
+                                Knowledge Base Management
+                            </h3>
+                            <p class="text-gray-600">
+                                Tools for curating and managing both general and
+                                organization-specific knowledge
+                            </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3
+                                class="text-xl font-semibold mb-4 text-gray-600"
+                            >
+                                Business Planning Modules
+                            </h3>
+                            <p class="text-gray-600">
+                                Specialized services for financial projections,
+                                market analysis, and others
+                            </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3
+                                class="text-xl font-semibold mb-4 text-gray-600"
+                            >
+                                Progress Tracking
+                            </h3>
+                            <p class="text-gray-600">
+                                System to monitor and visualize the progress of
+                                business plan creation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Technology Stack -->
+            <section class="slide flex items-center justify-center bg-white">
+                <div class="max-w-4xl mx-auto px-8">
+                    <h2
+                        class="text-4xl font-bold mb-4 text-center text-gray-800"
+                    >
+                        Technology Stack
+                    </h2>
+                    <p class="prose mb-8 text-center text-gray-800">
+                        This is a high level overview of the proposed system, It
+                        could grow to include more services and integrations.
+                        This will also work with the already existing
+                        Architecture.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-2 p-4">
+                                <svg
+                                    version="1.0"
+                                    id="katman_1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px"
+                                    y="0px"
+                                    viewBox="0 0 841.89 595.28"
+                                    style="
+                                        enable-background: new 0 0 841.89 595.28;
+                                    "
+                                    xml:space="preserve"
+                                >
+                                    <style type="text/css">
+                                        .st0 {
+                                            fill-rule: evenodd;
+                                            clip-rule: evenodd;
+                                        }
+                                    </style>
+                                    <path
+                                        d="M541.9,223.53h127.77v23.58h-50.69v124.07h-25.35V247.11H541.9V223.53z"
+                                    />
+                                    <path
+                                        d="M331.76,223.53v23.58H229.34v37.94h82.37v23.58h-82.37v38.96h102.42v23.58H203.99V247.11h-0.01v-23.58H331.76z"
+                                    />
+                                    <path
+                                        d="M395.56,223.59h-33.17l118.8,147.65h33.26l-59.41-73.78l59.31-73.77l-33.17,0.05l-42.75,53.09L395.56,223.59z"
+                                    />
+                                    <path
+                                        d="M429.59,329.06l-16.61-20.65l-50.69,62.95h33.26L429.59,329.06z"
+                                    />
+                                    <path
+                                        class="st0"
+                                        d="M204.88,371.18L85.93,223.47H54.25v147.65h25.34V255.03l93.45,116.15H204.88z"
+                                    />
+                                    <path
+                                        d="M675.37,370.28c-1.86,0-3.44-0.64-4.76-1.93c-1.32-1.29-1.98-2.84-1.96-4.69c-0.02-1.79,0.64-3.33,1.96-4.62  c1.32-1.29,2.9-1.93,4.76-1.93c1.79,0,3.35,0.64,4.67,1.93c1.34,1.29,2.01,2.83,2.03,4.62c-0.02,1.22-0.33,2.33-0.95,3.33  c-0.63,1.02-1.44,1.81-2.46,2.39C677.67,369.98,676.57,370.28,675.37,370.28z"
+                                    />
+                                    <path
+                                        d="M718.62,308.08h11.23v43.27c-0.02,3.98-0.88,7.38-2.56,10.24c-1.7,2.86-4.05,5.04-7.07,6.58c-3.01,1.52-6.53,2.3-10.53,2.3  c-3.66,0-6.94-0.66-9.86-1.95c-2.92-1.29-5.24-3.21-6.94-5.75c-1.72-2.54-2.56-5.7-2.56-9.49h11.25c0.02,1.66,0.39,3.1,1.12,4.3  c0.72,1.2,1.72,2.12,2.99,2.76c1.29,0.64,2.76,0.96,4.43,0.96c1.8,0,3.35-0.37,4.6-1.13c1.25-0.74,2.22-1.86,2.89-3.35  c0.65-1.47,1-3.3,1.01-5.47V308.08z"
+                                    />
+                                    <path
+                                        d="M776.06,325c-0.27-2.62-1.48-4.67-3.57-6.13c-2.11-1.47-4.84-2.2-8.19-2.2c-2.35,0-4.38,0.36-6.06,1.05  c-1.68,0.71-2.99,1.66-3.88,2.86c-0.89,1.2-1.34,2.57-1.37,4.11c0,1.29,0.31,2.4,0.91,3.33c0.6,0.95,1.41,1.74,2.46,2.39  c1.03,0.66,2.18,1.2,3.44,1.64c1.27,0.44,2.54,0.81,3.81,1.12l5.86,1.44c2.35,0.54,4.64,1.27,6.82,2.2  c2.18,0.91,4.16,2.08,5.89,3.49c1.74,1.4,3.11,3.1,4.12,5.08c1.01,1.98,1.53,4.3,1.53,6.97c0,3.6-0.93,6.77-2.8,9.51  c-1.87,2.72-4.57,4.86-8.1,6.4c-3.52,1.52-7.78,2.3-12.79,2.3c-4.84,0-9.07-0.74-12.62-2.23c-3.57-1.47-6.35-3.64-8.36-6.48  c-2.01-2.84-3.09-6.31-3.25-10.39h11.13c0.15,2.13,0.84,3.91,2.01,5.35c1.18,1.42,2.73,2.47,4.62,3.18  c1.91,0.69,4.03,1.05,6.39,1.05c2.46,0,4.62-0.37,6.49-1.1c1.85-0.73,3.31-1.74,4.36-3.06c1.07-1.3,1.6-2.84,1.61-4.6  c-0.02-1.61-0.5-2.94-1.43-3.99c-0.94-1.05-2.25-1.93-3.92-2.64c-1.68-0.71-3.64-1.35-5.87-1.91l-7.11-1.79  c-5.13-1.3-9.2-3.28-12.18-5.94c-2.99-2.66-4.46-6.18-4.46-10.59c0-3.62,1-6.8,3.01-9.53c1.99-2.72,4.72-4.84,8.17-6.35  c3.47-1.52,7.38-2.27,11.74-2.27c4.43,0,8.31,0.74,11.66,2.27c3.35,1.51,5.98,3.6,7.88,6.28c1.91,2.67,2.9,5.74,2.95,9.21H776.06z"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-gray-800">Next.js</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-2 p-4">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-brand-typescript"
+                                    width="44"
+                                    height="44"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="dodgerblue"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                    />
+                                    <path
+                                        d="M15 17.5c.32 .32 .754 .5 1.207 .5h.543c.69 0 1.25 -.56 1.25 -1.25v-.25a1.5 1.5 0 0 0 -1.5 -1.5a1.5 1.5 0 0 1 -1.5 -1.5v-.25c0 -.69 .56 -1.25 1.25 -1.25h.543c.453 0 .887 .18 1.207 .5"
+                                    />
+                                    <path d="M9 12h4" />
+                                    <path d="M11 12v6" />
+                                    <path
+                                        d="M21 19v-14a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2z"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-gray-800">
+                                Typescript
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-2 p-4">
+                                <svg
+                                    version="1.0"
+                                    id="katman_1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px"
+                                    y="0px"
+                                    viewBox="0 0 600 450"
+                                    style="enable-background: new 0 0 600 450"
+                                    xml:space="preserve"
+                                >
+                                    <style type="text/css">
+                                        .st0 {
+                                            fill: #010202;
+                                        }
+                                    </style>
+                                    <path
+                                        class="st0"
+                                        d="M425.2,164.6c-4.2-1.4-8.3-2.7-12.5-3.9c0.7-2.9,1.3-5.7,1.9-8.6c9.5-46,3.2-82.9-17.8-95.1  c-20.3-11.6-53.4,0.5-86.8,29.6c-3.3,2.9-6.6,5.9-9.6,8.9c-2.1-2-4.2-4-6.4-5.9c-35.1-31.2-70.3-44.3-91.3-32  c-20.2,11.7-26.2,46.5-17.7,90c0.8,4.3,1.8,8.6,2.9,12.9c-4.9,1.4-9.8,2.9-14.3,4.5c-41.2,14.3-70.7,36.8-70.7,60.1  c0,24.1,31.5,48.2,74.3,62.9c3.5,1.2,6.9,2.3,10.5,3.3c-1.2,4.6-2.2,9.2-3.1,13.9c-8.1,42.8-1.8,76.7,18.4,88.4  c20.8,12,55.8-0.3,89.9-30.2c2.7-2.4,5.4-4.9,8.1-7.5c3.4,3.3,6.9,6.5,10.5,9.6c33,28.4,65.6,39.9,85.8,28.2  c20.8-12,27.6-48.5,18.8-92.9c-0.7-3.4-1.5-6.9-2.3-10.4c2.5-0.7,4.9-1.5,7.2-2.2c44.5-14.7,76.7-38.6,76.7-63  C497.5,201.7,467.2,179,425.2,164.6L425.2,164.6z M320.9,99.1c28.7-25,55.4-34.8,67.6-27.8c13,7.5,18,37.7,9.9,77.4  c-0.5,2.6-1.1,5.2-1.8,7.7c-17.1-3.9-34.5-6.6-51.9-8.2c-10-14.3-21-28.1-32.9-40.9C314.9,104.5,317.8,101.8,320.9,99.1z M231.6,265  c3.9,6.7,7.9,13.4,12.2,20c-12-1.3-24-3.2-35.8-5.8c3.4-11.1,7.6-22.6,12.6-34.3C224.2,251.7,227.8,258.4,231.6,265L231.6,265z   M208.3,172.3c11.1-2.5,22.9-4.5,35.2-6c-4.1,6.4-8.1,13-11.9,19.6c-3.8,6.6-7.5,13.3-11,20.1C215.8,194.4,211.7,183.1,208.3,172.3  L208.3,172.3z M229.4,225.4c5.1-10.6,10.6-21.1,16.5-31.3s12.2-20.2,18.8-30c11.6-0.8,23.4-1.3,35.4-1.3c12,0,23.9,0.5,35.4,1.3  c6.6,9.7,12.8,19.7,18.7,29.8c5.9,10.2,11.5,20.6,16.7,31.2c-5.2,10.6-10.7,21.1-16.7,31.5c-5.9,10.3-12.1,20.2-18.7,30.1  c-11.5,0.8-23.4,1.2-35.6,1.2s-23.8-0.4-35.2-1.1c-6.7-9.8-13-19.8-19-30.1C240,246.5,234.6,236,229.4,225.4L229.4,225.4z   M368.7,264.9c3.9-6.8,7.6-13.6,11.3-20.6c4.9,11.2,9.3,22.5,13,34.2c-12,2.7-24.1,4.8-36.2,6.2  C360.9,278.2,364.8,271.5,368.7,264.9L368.7,264.9z M379.8,205.9c-3.6-6.8-7.3-13.6-11.2-20.2c-3.8-6.6-7.7-13-11.8-19.4  c12.4,1.5,24.3,3.6,35.4,6.2C388.7,183.8,384.5,194.9,379.8,205.9z M300.3,119.1c8.1,8.8,15.7,18,22.8,27.6  c-15.3-0.7-30.6-0.7-45.9,0C284.8,136.8,292.6,127.5,300.3,119.1z M210.8,71.9c13-7.6,41.7,3.2,72,30.1c1.9,1.7,3.9,3.5,5.9,5.4  c-12,12.9-23,26.6-33.1,40.9c-17.4,1.5-34.7,4.2-51.8,8c-1-3.9-1.9-7.9-2.7-12C193.9,107,198.6,78.9,210.8,71.9L210.8,71.9z   M191.9,275.1c-3.2-0.9-6.4-1.9-9.6-3c-16.4-5.2-35.1-13.3-48.6-24.1c-7.8-5.4-13-13.7-14.5-23.1c0-14.1,24.4-32.2,59.5-44.4  c4.4-1.5,8.9-2.9,13.3-4.2c5.2,16.7,11.6,33.2,18.9,49C203.6,241.5,197.2,258.2,191.9,275.1z M281.8,350.7  c-12.7,11.6-27.5,20.9-43.5,27.2c-8.6,4.1-18.4,4.5-27.2,1c-12.3-7.1-17.4-34.3-10.4-70.9c0.8-4.3,1.8-8.6,2.9-12.9  c17.3,3.7,34.7,6.2,52.4,7.6c10.2,14.4,21.4,28.2,33.3,41.2C286.8,346.2,284.3,348.6,281.8,350.7L281.8,350.7z M300.7,332  c-7.9-8.5-15.7-17.9-23.4-28c7.4,0.3,15,0.5,22.7,0.5c7.9,0,15.7-0.2,23.4-0.5C316.5,313.7,308.8,323,300.7,332z M401.5,355.1  c-0.7,9.4-5.3,18.2-12.7,24.1c-12.3,7.1-38.4-2.2-66.6-26.4c-3.2-2.8-6.5-5.8-9.8-8.9c11.8-13,22.7-26.8,32.5-41.3  c17.7-1.5,35.2-4.2,52.6-8.1c0.8,3.2,1.5,6.3,2.1,9.4C403.4,320.6,404,338,401.5,355.1L401.5,355.1z M415.6,272.2  c-2.2,0.7-4.3,1.4-6.6,2c-5.4-16.8-12-33.2-19.7-49.2c7.4-15.7,13.6-31.9,18.9-48.5c4,1.2,7.9,2.4,11.6,3.6  c35.9,12.3,61.2,30.7,61.2,44.7C481,240,454.1,259.5,415.6,272.2z M300.1,260.6c19.5,0,35.3-15.8,35.3-35.3S319.6,190,300.1,190  c-19.5,0-35.3,15.8-35.3,35.3S280.6,260.6,300.1,260.6L300.1,260.6z"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-gray-800">React</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-2 p-4">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="44"
+                                    height="44"
+                                    viewBox="0 0 432.071 445.383"
+                                    xml:space="preserve"
+                                >
+                                    <g
+                                        id="orginal"
+                                        style="
+                                            fill-rule: nonzero;
+                                            clip-rule: nonzero;
+                                            stroke: #000000;
+                                            stroke-miterlimit: 4;
+                                        "
+                                    ></g>
+                                    <g
+                                        id="Layer_x0020_3"
+                                        style="
+                                            fill-rule: nonzero;
+                                            clip-rule: nonzero;
+                                            fill: none;
+                                            stroke: #ffffff;
+                                            stroke-width: 12.4651;
+                                            stroke-linecap: round;
+                                            stroke-linejoin: round;
+                                            stroke-miterlimit: 4;
+                                        "
+                                    >
+                                        <path
+                                            style="
+                                                fill: #000000;
+                                                stroke: #000000;
+                                                stroke-width: 37.3953;
+                                                stroke-linecap: butt;
+                                                stroke-linejoin: miter;
+                                            "
+                                            d="M323.205,324.227c2.833-23.601,1.984-27.062,19.563-23.239l4.463,0.392c13.517,0.615,31.199-2.174,41.587-7c22.362-10.376,35.622-27.7,13.572-23.148c-50.297,10.376-53.755-6.655-53.755-6.655c53.111-78.803,75.313-178.836,56.149-203.322    C352.514-5.534,262.036,26.049,260.522,26.869l-0.482,0.089c-9.938-2.062-21.06-3.294-33.554-3.496c-22.761-0.374-40.032,5.967-53.133,15.904c0,0-161.408-66.498-153.899,83.628c1.597,31.936,45.777,241.655,98.47,178.31    c19.259-23.163,37.871-42.748,37.871-42.748c9.242,6.14,20.307,9.272,31.912,8.147l0.897-0.765c-0.281,2.876-0.157,5.689,0.359,9.019c-13.572,15.167-9.584,17.83-36.723,23.416c-27.457,5.659-11.326,15.734-0.797,18.367c12.768,3.193,42.305,7.716,62.268-20.224    l-0.795,3.188c5.325,4.26,4.965,30.619,5.72,49.452c0.756,18.834,2.017,36.409,5.856,46.771c3.839,10.36,8.369,37.05,44.036,29.406c29.809-6.388,52.6-15.582,54.677-101.107"
+                                        />
+                                        <path
+                                            style="fill: #336791; stroke: none"
+                                            d="M402.395,271.23c-50.302,10.376-53.76-6.655-53.76-6.655c53.111-78.808,75.313-178.843,56.153-203.326c-52.27-66.785-142.752-35.2-144.262-34.38l-0.486,0.087c-9.938-2.063-21.06-3.292-33.56-3.496c-22.761-0.373-40.026,5.967-53.127,15.902    c0,0-161.411-66.495-153.904,83.63c1.597,31.938,45.776,241.657,98.471,178.312c19.26-23.163,37.869-42.748,37.869-42.748c9.243,6.14,20.308,9.272,31.908,8.147l0.901-0.765c-0.28,2.876-0.152,5.689,0.361,9.019c-13.575,15.167-9.586,17.83-36.723,23.416    c-27.459,5.659-11.328,15.734-0.796,18.367c12.768,3.193,42.307,7.716,62.266-20.224l-0.796,3.188c5.319,4.26,9.054,27.711,8.428,48.969c-0.626,21.259-1.044,35.854,3.147,47.254c4.191,11.4,8.368,37.05,44.042,29.406c29.809-6.388,45.256-22.942,47.405-50.555    c1.525-19.631,4.976-16.729,5.194-34.28l2.768-8.309c3.192-26.611,0.507-35.196,18.872-31.203l4.463,0.392c13.517,0.615,31.208-2.174,41.591-7c22.358-10.376,35.618-27.7,13.573-23.148z"
+                                        />
+                                        <path
+                                            d="M215.866,286.484c-1.385,49.516,0.348,99.377,5.193,111.495c4.848,12.118,15.223,35.688,50.9,28.045c29.806-6.39,40.651-18.756,45.357-46.051c3.466-20.082,10.148-75.854,11.005-87.281"
+                                        />
+                                        <path
+                                            d="M173.104,38.256c0,0-161.521-66.016-154.012,84.109c1.597,31.938,45.779,241.664,98.473,178.316c19.256-23.166,36.671-41.335,36.671-41.335"
+                                        />
+                                        <path
+                                            d="M260.349,26.207c-5.591,1.753,89.848-34.889,144.087,34.417c19.159,24.484-3.043,124.519-56.153,203.329"
+                                        />
+                                        <path
+                                            style="stroke-linejoin: bevel"
+                                            d="M348.282,263.953c0,0,3.461,17.036,53.764,6.653c22.04-4.552,8.776,12.774-13.577,23.155c-18.345,8.514-59.474,10.696-60.146-1.069c-1.729-30.355,21.647-21.133,19.96-28.739c-1.525-6.85-11.979-13.573-18.894-30.338    c-6.037-14.633-82.796-126.849,21.287-110.183c3.813-0.789-27.146-99.002-124.553-100.599c-97.385-1.597-94.19,119.762-94.19,119.762"
+                                        />
+                                        <path
+                                            d="M188.604,274.334c-13.577,15.166-9.584,17.829-36.723,23.417c-27.459,5.66-11.326,15.733-0.797,18.365c12.768,3.195,42.307,7.718,62.266-20.229c6.078-8.509-0.036-22.086-8.385-25.547c-4.034-1.671-9.428-3.765-16.361,3.994z"
+                                        />
+                                        <path
+                                            d="M187.715,274.069c-1.368-8.917,2.93-19.528,7.536-31.942c6.922-18.626,22.893-37.255,10.117-96.339c-9.523-44.029-73.396-9.163-73.436-3.193c-0.039,5.968,2.889,30.26-1.067,58.548c-5.162,36.913,23.488,68.132,56.479,64.938"
+                                        />
+                                        <path
+                                            style="
+                                                fill: #ffffff;
+                                                stroke-width: 4.155;
+                                                stroke-linecap: butt;
+                                                stroke-linejoin: miter;
+                                            "
+                                            d="M172.517,141.7c-0.288,2.039,3.733,7.48,8.976,8.207c5.234,0.73,9.714-3.522,9.998-5.559c0.284-2.039-3.732-4.285-8.977-5.015c-5.237-0.731-9.719,0.333-9.996,2.367z"
+                                        />
+                                        <path
+                                            style="
+                                                fill: #ffffff;
+                                                stroke-width: 2.0775;
+                                                stroke-linecap: butt;
+                                                stroke-linejoin: miter;
+                                            "
+                                            d="M331.941,137.543c0.284,2.039-3.732,7.48-8.976,8.207c-5.238,0.73-9.718-3.522-10.005-5.559c-0.277-2.039,3.74-4.285,8.979-5.015c5.239-0.73,9.718,0.333,10.002,2.368z"
+                                        />
+                                        <path
+                                            d="M350.676,123.432c0.863,15.994-3.445,26.888-3.988,43.914c-0.804,24.748,11.799,53.074-7.191,81.435"
+                                        />
+                                        <path
+                                            style="stroke-width: 3"
+                                            d="M0,60.232"
+                                        />
+                                    </g>
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-gray-800">
+                                PostgreSQL
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-2 p-4">
+                                <svg
+                                    id="katman_1"
+                                    data-name="katman 1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="44"
+                                    height="44"
+                                    version="1.1"
+                                    viewBox="0 0 841.89 595.28"
+                                >
+                                    <defs>
+                                        <style>
+                                            .cls-1 {
+                                                fill-rule: evenodd;
+                                            }
+
+                                            .cls-1,
+                                            .cls-2 {
+                                                fill: #111;
+                                                stroke-width: 0px;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path
+                                        class="cls-2"
+                                        d="M224.44,259.08h37.1c26.82,0,33.67,15.79,33.67,28.63s-6.92,28.63-33.67,28.63h-22.92v45.17h-14.18v-102.43ZM238.69,304.25h18.75c11.29,0,22.52-2.55,22.52-16.47s-11.29-16.47-22.52-16.47h-18.75v32.93Z"
+                                    />
+                                    <path
+                                        class="cls-2"
+                                        d="M313.83,258.61c5.38,0,9.75,4.23,9.81,9.41.07,5.24-4.17,9.54-9.54,9.68s-9.81-3.97-10.01-9.21c-.07-2.62.94-5.11,2.76-6.99,1.75-1.81,4.3-2.89,6.99-2.89ZM307.24,292.96h13.17v68.62h-13.17v-68.62Z"
+                                    />
+                                    <path
+                                        class="cls-2"
+                                        d="M335.74,292.96h13.38v10.62h.34c4.64-8.07,13.64-12.9,23.12-12.3,13.64,0,25.41,8,25.41,26.21v44.16h-13.17v-40.46c0-12.9-7.59-17.68-16.06-17.68-11.09,0-19.56,6.92-19.56,22.85v35.29h-13.44v-68.69Z"
+                                    />
+                                    <path
+                                        class="cls-2"
+                                        d="M422.37,332.07c0,11.96,11.43,19.83,23.73,19.83,7.73-.2,14.92-4.03,19.29-10.22l10.15,7.53c-7.39,9.48-19.09,14.79-31.25,14.18-22.31,0-36.16-15.59-36.16-36.03-.4-9.54,3.29-18.82,10.15-25.61,6.86-6.79,16.27-10.55,26.08-10.42,24.8,0,34.28,18.48,34.28,36.16v4.64h-56.26v-.07ZM464.58,321.66c-.34-11.43-6.86-19.83-20.3-19.83-11.49-.07-21.1,8.6-21.84,19.83h42.14Z"
+                                    />
+                                    <path
+                                        class="cls-2"
+                                        d="M539.12,311.24c-4.37-5.04-10.75-7.86-17.54-7.66-14.52,0-21.98,11.43-21.98,24.33-.34,6.12,1.88,12.03,6.18,16.47s10.28,6.92,16.53,6.86c6.59.2,12.9-2.62,17.07-7.66l9.48,9.14c-6.92,7.12-16.67,10.96-26.68,10.55-9.88.47-19.49-3.09-26.48-9.95-6.99-6.79-10.75-16.2-10.28-25.81-.47-9.68,3.29-19.09,10.28-25.94,6.99-6.86,16.6-10.55,26.55-10.22,10.15-.27,19.96,3.7,27.02,10.82l-10.15,9.07Z"
+                                    />
+                                    <path
+                                        class="cls-2"
+                                        d="M588.39,291.21c20.3.34,36.56,16.6,36.36,36.43s-16.8,35.76-37.17,35.62c-20.3-.13-36.76-16.2-36.76-36.03,0-9.68,3.97-18.89,11.02-25.67,7.12-6.79,16.67-10.48,26.55-10.35ZM588.39,351.16c14.18,0,23.12-9.88,23.12-23.93s-8.94-23.86-23.12-23.86-23.19,9.88-23.19,23.86,8.94,23.93,23.19,23.93Z"
+                                    />
+                                    <path
+                                        class="cls-2"
+                                        d="M636.64,292.96h13.38v10.62c4.64-8.13,13.71-12.9,23.19-12.3,13.64,0,25.41,8,25.41,26.21v44.16h-13.38v-40.46c0-12.9-7.59-17.68-16-17.68-11.16,0-19.56,6.92-19.56,22.85v35.29h-12.97v-68.69h-.07Z"
+                                    />
+                                    <path
+                                        class="cls-2"
+                                        d="M723.41,332.07c0,11.96,11.43,19.83,23.73,19.83,7.73-.27,14.92-4.03,19.29-10.22l10.15,7.53c-7.39,9.41-19.02,14.65-31.19,13.98-22.25,0-36.16-15.59-36.16-36.03-.4-9.54,3.29-18.89,10.15-25.67,6.86-6.86,16.33-10.55,26.15-10.35,24.8,0,34.28,18.48,34.28,36.16v4.64l-56.39.13ZM765.56,321.59c-.34-11.43-6.79-19.83-20.3-19.83-11.49-.07-21.1,8.6-21.84,19.83h42.14Z"
+                                    />
+                                    <path
+                                        class="cls-1"
+                                        d="M144.19,228.84c-1.41-1.68-3.76-2.08-5.65-1.01l-1.75.94-19.02,10.82,4.44,7.8,12.37-7.06-3.02,16.53,8.8,1.61,3.09-16.6,9.14,10.89,6.86-5.78-13.85-16.53h-.07l-1.34-1.61ZM117.5,368.3c4.57,0,8.27-3.63,8.27-8.07s-3.7-8.07-8.27-8.07-8.27,3.63-8.27,8.07c-.07,4.44,3.7,8.07,8.27,8.07ZM128.59,324.01l-2.96,16.6-8.87-1.61,2.96-16.53-12.37,7.12-4.5-7.8,18.89-10.82,1.75-1.01c1.88-1.08,4.23-.67,5.65,1.01l1.34,1.61,14.05,16.47-6.86,5.85-9.07-10.89ZM135.78,284.35l-2.96,16.6-8.87-1.61,2.96-16.47-12.3,7.06-4.44-7.8,18.82-10.75v-.13h.13l1.75-1.01c1.88-1.08,4.23-.67,5.65,1.01l1.34,1.55,13.98,16.53-6.86,5.85-9.21-10.82ZM77.78,349.95h-.07l-1.81-.54c-1.95-.54-3.23-2.42-3.09-4.44l1.61-22.45,8.54.6-1.01,13.64,13.24-9.01,4.77,7.06-12.97,8.8,13.24,3.83-2.35,8.2-20.1-5.71ZM165.63,359.23l-.6,1.95c-.6,1.88-2.35,3.16-4.37,3.02l-1.88-.13-.13.07-.07-.07-20.84-1.41.54-8.54,13.85.94-9.07-12.7,6.92-4.97,9.28,13.04,4.03-13.17,8.13,2.49-5.78,19.49ZM190.09,312.99l1.01,1.81c1.01,1.81.6,4.1-1.01,5.44l-1.48,1.28v.07h-.07l-16.2,13.71-5.65-6.65,10.62-9.01-15.93-2.82,1.55-8.6,16.06,2.82-6.72-12.1,7.59-4.23,10.22,18.28ZM173.62,275.48l-14.38,7.73-4.17-7.66,14.18-7.59-12.97-5.31,3.29-8.07,19.76,8,.07-.07.07.13,1.81.74c1.95.81,3.02,2.82,2.69,4.84l-.34,2.02-3.7,20.5-8.6-1.55,2.29-13.71ZM77.11,293.5l16,2.69-1.48,8.6-16.13-2.76,6.86,12.1-7.59,4.3-10.35-18.21-1.01-1.75c-1.01-1.81-.6-4.1.94-5.44l1.48-1.28v-.07h.07l16-13.78,5.71,6.65-10.48,8.94ZM101.24,256.26l10.62,11.83-6.52,5.85-10.89-12.1-2.49,13.78-8.6-1.55,3.76-20.43.4-2.08c.34-2.02,2.08-3.49,4.1-3.56l1.88-.07.07-.07.07.07,21.37-.87.34,8.74-14.11.47Z"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="font-semibold text-gray-800">
+                                Pinecone DB
+                            </p>
+                        </div>
+                        <!-- <div class="text-center">
+                        <img src="/api/placeholder/80/80" alt="WebSocket logo" class="w-20 h-20 mx-auto mb-2" />
+                        <p class="font-semibold text-gray-800">WebSockets</p>
+                    </div> -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Performance Metrics -->
+            <!-- <section class="slide flex items-center justify-center bg-gray-50">
+            <div class="max-w-4xl mx-auto px-8">
+                <h2 class="text-4xl font-bold mb-8 text-center text-gray-800">Performance Metrics</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <canvas id="responseTimeChart"></canvas>
+                    </div>
+                    <div>
+                        <canvas id="scalabilityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+            <!-- Slide 8: Security and Compliance -->
+            <section class="slide flex items-center justify-center bg-white">
+                <div class="max-w-4xl mx-auto px-8">
+                    <h2
+                        class="text-4xl font-bold mb-8 text-center text-gray-800"
+                    >
+                        Security and Compliance
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <h3
+                                class="text-xl font-semibold mb-4 text-gray-600"
+                            >
+                                Data Protection
+                            </h3>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                                <li>End-to-end encryption</li>
+                                <li>Regular security audits</li>
+                                <li>Multi-factor authentication</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <h3
+                                class="text-xl font-semibold mb-4 text-gray-600"
+                            >
+                                Compliance
+                            </h3>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-600">
+                                <li>GDPR compliant</li>
+                                <li>SOC 2 certified</li>
+                                <li>CCPA adherence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Future Roadmap -->
+            <!-- <section class="slide flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600">
+            <div class="max-w-4xl mx-auto px-8 text-white">
+                <h2 class="text-4xl font-bold mb-8 text-center">Future Roadmap</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">AI-Driven Insights</h3>
+                        <p>Implement advanced AI algorithms for deeper business insights and predictions</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">Industry-Specific Modules</h3>
+                        <p>Develop tailored modules for various industries and business types</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">Integration Ecosystem</h3>
+                        <p>Expand integrations with popular business tools and platforms</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        </div>
+
+        <script>
+            // Response Time Chart
+            new Chart(document.getElementById("responseTimeChart"), {
+                type: "line",
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+                    datasets: [
+                        {
+                            label: "Response Time (ms)",
+                            data: [300, 280, 250, 220, 200, 180],
+                            borderColor: "rgb(79, 70, 229)",
+                            tension: 0.1,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "Average Response Time",
+                        },
+                    },
+                },
+            });
+
+            // Scalability Chart
+            new Chart(document.getElementById("scalabilityChart"), {
+                type: "bar",
+                data: {
+                    labels: ["1K", "10K", "100K", "1M"],
+                    datasets: [
+                        {
+                            label: "Requests per Second",
+                            data: [1000, 5000, 20000, 50000],
+                            backgroundColor: "rgb(59, 130, 246)",
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "System Scalability",
+                        },
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: "Requests per Second",
+                            },
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: "Number of Concurrent Users",
+                            },
+                        },
+                    },
+                },
+            });
+
+            function convertToPDF() {
+                const element = document.body; // or document.getElementById('specific-element')
+                const opt = {
+                    margin: 10,
+                    filename: "myfile.pdf",
+                    image: { type: "jpeg", quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: {
+                        unit: "mm",
+                        format: "a4",
+                        orientation: "portrait",
+                    },
+                };
+
+                html2pdf().from(element).set(opt).save();
+            }
+        </script>
+    </body>
+</html>
